@@ -17,17 +17,29 @@ provider.claim.search.layout.ProviderClaimSearchLayout = Ext
 							layout : "form",
 							items : [
 									{
+										xtype : "panel",
+										border : false,
+										cls : "provider-title",
+										html : "Search for a Claim",
+										style : "padding-top: 10px;"
+									},
+									{
+										xtype : "panel",
+										border : false,
+										style : "padding-top: 10px;"
+									},									
+									{
 										xtype : "provider.claim.search.form.ProviderClaimSearchFormPanel",
 										id : "ProviderClaimSearchFormPanel",
 										baseObjConfig : config.baseObjConfig,
-										thisParentObject: config.thisParentObject
+										thisParentObject : config.thisParentObject
 									},
 									{
 										xtype : "provider.claim.search.container.ProviderClaimSearchResultsContainer",
 										id : "ProviderClaimSearchResultsContainer",
 										baseObjConfig : config.baseObjConfig,
 										style : "padding-top:10px;",
-										thisParentObject: config.thisParentObject
+										thisParentObject : config.thisParentObject
 									} ]
 						};
 

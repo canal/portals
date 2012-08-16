@@ -44,7 +44,7 @@ provider.claim.search.form.ProviderClaimSearchFormPanel = Ext
 								}
 
 								hideTinPanel = true;
-							} else if (config.baseObjConfig.tinData.ReadTinsForUserResponse.TINList.length > 10) {								
+							} else if (config.baseObjConfig.tinData.ReadTinsForUserResponse.TINList.length > 10) {
 								this.TIN_PANEL = {
 									xtype : 'textfield',
 									id : this.FIELD_TIN_ID,
@@ -54,14 +54,14 @@ provider.claim.search.form.ProviderClaimSearchFormPanel = Ext
 									allowBlank : false,
 									msgTarget : "under",
 									maxLength : 10,
-                                    vtype:"tin"  
-                    				,autoCreate : {
-                    						tag : "input",
-                    						size : "10",
-                    						minLength: "9",
-                    						maxLength : "10"
-                    					}                                                            	
- 
+									vtype : "tin",
+									autoCreate : {
+										tag : "input",
+										size : "10",
+										minLength : "9",
+										maxLength : "10"
+									}
+
 								}
 							} else if (config.baseObjConfig.tinData.ReadTinsForUserResponse.TINList.length <= 10) {
 								for (i = 0; i < config.baseObjConfig.tinData.ReadTinsForUserResponse.TINList.length; i++) {
@@ -70,7 +70,7 @@ provider.claim.search.form.ProviderClaimSearchFormPanel = Ext
 												id : config.baseObjConfig.tinData.ReadTinsForUserResponse.TINList[i],
 												name : config.baseObjConfig.tinData.ReadTinsForUserResponse.TINList[i]
 											});
-								}								
+								}
 								this.TIN_PANEL = {
 									xtype : "resizable-combo",
 									mode : "local",
@@ -118,18 +118,6 @@ provider.claim.search.form.ProviderClaimSearchFormPanel = Ext
 							border : false,
 							labelAlign : "top",
 							items : [
-									{
-										xtype : "panel",
-										border : false,
-										cls : "portal-title",
-										html : "Search for a Claim",
-										style : "padding-top: 10px;"
-									},
-									{
-										xtype : "panel",
-										border : false,
-										style : "padding-top: 10px;"
-									},
 									{
 										xtype : "panel",
 										layout : "column",
@@ -191,9 +179,13 @@ provider.claim.search.form.ProviderClaimSearchFormPanel = Ext
 														hideLabel : false,
 														allowBlank : false,
 														msgTarget : "under",
-														maxLength : 40
-														,vtype:"dollar"						
-														,autoCreate:{tag: "input",size:"14",maxLength:"14"}
+														maxLength : 40,
+														vtype : "dollar",
+														autoCreate : {
+															tag : "input",
+															size : "14",
+															maxLength : "14"
+														}
 													} ]
 												},
 												{
@@ -211,18 +203,18 @@ provider.claim.search.form.ProviderClaimSearchFormPanel = Ext
 													layout : "form",
 													baseCls : "provider-search-filter-fields-body-no-border",
 													columnWidth : .08,
-													items : [ 
-													         {
-													        	height: 15,
-													        	baseCls : "provider-search-filter-fields-body"
-													         },
-													          {
-														xtype : "button",
-														id : this.BUTTON_SEARCH_ID,
-														style : "float:left;",
-														text : "<div>SEARCH</div>",
-														handler : this.filterSearchSubmit
-													} ]
+													items : [
+															{
+																height : 15,
+																baseCls : "provider-search-filter-fields-body"
+															},
+															{
+																xtype : "button",
+																id : this.BUTTON_SEARCH_ID,
+																style : "float:left;",
+																text : "<div>SEARCH</div>",
+																handler : this.filterSearchSubmit
+															} ]
 												} ]
 									} ]// End of form items
 
@@ -292,33 +284,34 @@ provider.claim.search.form.ProviderClaimSearchFormPanel = Ext
 							_filterPanel.el.mask("Searching...",
 									"x-mask-loading");
 
-							 _form
+							_form
 									.submit({
 										url : _url,
 										isMessageIgnore : true,
 										success : function(form, action) {
 											var _resp = Ext
 													.decode(action.response.responseText);
-											var _totalNumberOfRecords = _resp.totalMatchingRecords;
-											if (_totalNumberOfRecords && _totalNumberOfRecords > 0) {
-												if (_totalNumberOfRecords == 1) {
-													_instance.thisParentObject.claimSearchResults = _resp.claimSearchResponse.ClaimSearchResponse.ClaimSearchResponseDetail.MatchingClaims.Claim;
+											var _displayClaim = _resp.displayClaim;
+											var _totalMatchingRecords = _resp.totalMatchingRecords;
+											if (_displayClaim) {
+												_instance.thisParentObject.claimSearchResults = _resp.claimSearchResponse.ClaimSearchResponse.ClaimSearchResponseDetail.MatchingClaims.Claim;
+												_instance.thisParentObject.showResults
+														.call(
+																_instance.thisParentObject,
+																'OneClaimSearchResultView');
+											} else {
+												// Toggle to No Results Panel
+												if (_totalMatchingRecords == 0) {
 													_instance.thisParentObject.showResults
 															.call(
 																	_instance.thisParentObject,
-																	'OneClaimSearchResultView');
+																	'ZeroClaimSearchResultsView');
 												} else {
 													_instance.thisParentObject.showResults
 															.call(
 																	_instance.thisParentObject,
 																	'MultipleClaimSearchResultsView');
 												}
-											} else {
-												// Toggle to No Results Panel
-												_instance.thisParentObject.showResults
-														.call(
-																_instance.thisParentObject,
-																'ZeroClaimSearchResultsView');
 											}
 
 											_filterPanel.el.unmask();
@@ -332,11 +325,11 @@ provider.claim.search.form.ProviderClaimSearchFormPanel = Ext
 											Ext.getCmp(
 													_instance.BUTTON_SEARCH_ID)
 													.enable();
-											
+
 											_instance.thisParentObject.showResults
-											.call(
-													_instance.thisParentObject,
-													'GeneralErrorClaimSearchResultsWindow');
+													.call(
+															_instance.thisParentObject,
+															'GeneralErrorClaimSearchResultsWindow');
 										}
 									});
 						}

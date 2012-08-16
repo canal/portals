@@ -1,0 +1,342 @@
+/* Pending
+	# Image Borders of Top Button Menus
+	# Redo Hard Override of x-menu
+
+/*  Tool Bar */
+.mpi-toolbar {
+	background: #FFFFFF none repeat scroll 0 0;
+	border-bottom: 6px solid;
+	border-color:#191970;
+	padding-bottom:0px;
+}
+
+.mpi-toolbar-bottom {
+	background: #cccccc;
+	border-bottom: 1px solid;
+	border-color:#000000;
+}
+
+/* Sub Menu */
+.mpi-submenu  {
+	font-size: 10px;
+}
+
+/* Sub Menu Hard Override */
+.x-menu {
+	border: 1px solid #000000;
+	z-index: 15000;
+	zoom: 1;
+	background: #F5F5F5;
+	padding: 2px;	
+}
+
+/* MPI Button */
+.mpi-btn {
+	border-color:#191970;
+}
+
+.mpi-btn .x-btn-ml {
+	//background:url(/bluenog/decorations/layout/PageDecosIdxmDefault//img/images/default/button/btn-sprite.gif) no-repeat 0 0;
+	background:#efefef;
+	border-top: 1px solid #191970;
+	border-left: 1px solid #191970;
+}
+
+.mpi-btn .x-btn-mr {
+	//background:url(/bluenog/decorations/layout/PageDecosIdxmDefault//img/images/default/button/btn-sprite.gif) no-repeat 0 -21px;
+	background:#efefef;
+	border-top: 1px solid #191970;
+	border-right: 1px solid #191970;
+}
+
+.mpi-btn .x-btn-mc {
+	border-top: 1px solid #191970;	
+	background:#efefef;
+}
+
+.mpi-btn .x-btn-text {
+	font-size: 12px;
+	font-weight: bold; 
+	border-color: #191970;
+}
+
+/* NEW */
+
+/* Off Top */
+.mpi-btn .x-btn-tl{
+	background:none 0 0;
+	border:0px none;
+}
+
+.mpi-btn .x-btn-tc {
+	background:none 0 0;
+	border:0px none;
+}
+
+.mpi-btn .x-btn-tr {
+	background:none 0 0;
+	border:0px none;
+}
+
+/* Off Bottom */
+.mpi-btn .x-btn-bl {
+	background:#efefef none repeat scroll 0 0;
+	border-left: 1px solid #191970;
+}
+
+.mpi-btn .x-btn-bc {
+	background:#efefef 0 0;
+	border:0px none;
+}
+
+.mpi-btn .x-btn-br {
+	background:#efefef none repeat scroll 0 0;
+	border-right: 1px solid #191970;
+}
+
+/* On Top Active */
+.mpi-btn-on .x-btn-tl{
+	background:none 0 0;
+	border:0px none;
+}
+
+.mpi-btn-on .x-btn-tc {
+	background:none 0 0;
+	border:0px none;
+}
+
+.mpi-btn-on .x-btn-tr {
+	background:none 0 0;
+	border:0px none;
+}
+
+/* On Bottom Active */
+.mpi-btn-on .x-btn-bl {
+	background:#191970 none repeat scroll 0 0;
+	border-left: 1px solid #191970;
+}
+
+.mpi-btn-on .x-btn-bc {
+	background:#191970 0 0;
+	border:0px none;
+}
+
+.mpi-btn-on .x-btn-br {
+	background:#191970 none repeat scroll 0 0;
+	border-right: 1px solid #191970;
+}
+
+
+/* MPI Over Button */
+	/*With Menu*/
+.mpi-btn-over .x-btn-with-menu .x-btn-mc{
+	background:#191970;
+}
+
+	/* On Top */
+.mpi-btn-over .x-btn-tl, .x-btn-tc, .x-btn-tr{
+	background: none repeat scroll 0 0;
+	border:0 none;
+	//border: 0px;		
+}
+
+	/* On Bottom */
+.mpi-btn-over .x-btn-bl{
+	background:#efefef none repeat scroll 0 0;
+	border-left: 1px solid #191970;
+}
+
+.mpi-btn-over .x-btn-bc{
+	background:#efefef 0 0;
+	border:0px none;
+}
+
+.mpi-btn-over .x-btn-br{
+	background:#efefef none repeat scroll 0 0;
+	border-right: 1px solid #191970;
+}
+
+
+/* On Top */
+.mpi-btn-over-on .x-btn-tl, .x-btn-tc, .x-btn-tr{
+	background: none repeat scroll 0 0;
+	border:0 none;
+	//border: 0px;
+}
+
+/* On Bottom */
+.mpi-btn-over-on .x-btn-bl{
+	background:#191970 none repeat scroll 0 0;
+	border-left: 1px solid #191970;
+}
+
+.mpi-btn-over-on .x-btn-bc{
+	background:#191970 0 0;
+	border:0px none;
+}
+
+.mpi-btn-over-on .x-btn-br{
+	background:#191970 none repeat scroll 0 0;
+	border-right: 1px solid #191970;
+}
+/* NEW */
+
+
+.mpi-btn-over .x-btn-with-menu .x-btn-ml{
+	//background:url(/bluenog/decorations/layout/PageDecosIdxmDefault//img/images/default/button/btn-sprite.gif) no-repeat 0 0;
+	background:#efefef;
+	border-top: 1px solid #191970;
+	border-left: 1px solid #191970;	
+}
+
+.mpi-btn-over .x-btn-with-menu .x-btn-mr{
+	//background:url(/bluenog/decorations/layout/PageDecosIdxmDefault//img/images/default/button/btn-sprite.gif) no-repeat 0 -21px;
+	background:#efefef;
+	border-top: 1px solid #191970;
+	border-right: 1px solid #191970;
+}
+
+	/*Without Menu*/
+		/* WORKING ON THIS PART */	
+		.mpi-toolbar .x-btn-over .x-btn-mc{
+			background:#efefef;
+		}
+
+		.mpi-toolbar .x-btn-over .x-btn-ml {
+			//background:url(/bluenog/decorations/layout/PageDecosIdxmDefault//img/images/default/button/btn-sprite.gif) no-repeat 0 0;
+			background:#efefef;
+			border-top: 1px solid #191970;
+			border-left: 1px solid #191970;			
+		}
+
+		.mpi-toolbar .x-btn-over .x-btn-mr {
+			//background:url(/bluenog/decorations/layout/PageDecosIdxmDefault//img/images/default/button/btn-sprite.gif) no-repeat 0 -21px;
+			background:#efefef;
+			border-top: 1px solid #191970;
+			border-right: 1px solid #191970;
+		}
+		/* WORKING ON THIS PART */
+
+
+/* MPI Separator */
+.mpi-toolbar .xtb-sep {
+	background: transparent none;
+}
+
+
+
+
+/* MPI Button ON */
+.mpi-btn-on {
+}
+
+.mpi-btn-on .x-btn-ml {
+	//background:url(/bluenog/decorations/layout/PageDecosIdxmDefault//img/images/default/button/btn-sprite.gif) no-repeat 0 0;
+	background:#191970;
+	border-top: 1px solid #191970;
+	border-left: 1px solid #191970;			
+}
+
+.mpi-btn-on .x-btn-mr {
+	//background:url(/bluenog/decorations/layout/PageDecosIdxmDefault//img/images/default/button/btn-sprite.gif) no-repeat 0 -21px;
+	background:#191970;
+	border-top: 1px solid #191970;
+	border-right: 1px solid #191970;	
+}
+
+.mpi-btn-on .x-btn-mc {
+	border-top: 1px solid #191970;	
+	background:#191970;
+}
+
+.mpi-btn-on .x-btn-text {
+	font-size: 12px;
+	font-weight: bold; 
+	color: #FFFFFF;
+	border-color: #191970;
+}
+
+
+//When going over submenus
+.mpi-btn-on .x-btn-with-menu .x-btn-mc em {
+	//border-top: 1px solid #000000;	
+	background:#545454 url('../images/default/toolbar/btn-arrow.gif') no-repeat right 0;
+}
+
+.mpi-btn-on .x-btn-with-menu .x-btn-mc {
+	//border-top: 1px solid #000000;	
+	background:#545454 url('../images/default/toolbar/btn-arrow.gif') no-repeat right 0;
+}
+
+.mpi-btn-on .x-btn-with-menu .x-btn-ml {	
+	background:#545454;
+	border-top: 1px solid #000000;
+	border-left: 1px solid #000000;		
+}
+
+.mpi-btn-on .x-btn-with-menu .x-btn-mr {	
+	background:#545454;
+	border-top: 1px solid #000000;
+	border-right: 1px solid #000000;	
+}
+
+
+/* MPI Over Button ON */
+.mpi-btn-over-on .x-btn-with-menu .x-btn-mc{
+	background:#191970;
+}
+
+.mpi-btn-over-on .x-btn-with-menu .x-btn-ml{
+	//background:url(/bluenog/decorations/layout/PageDecosIdxmDefault//img/images/default/button/btn-sprite.gif) no-repeat 0 0;
+	background:#191970;
+	border-top: 1px solid #191970;
+	border-left: 1px solid #191970;		
+}
+
+.mpi-btn-over-on .x-btn-with-menu .x-btn-mr{
+	//background:url(/bluenog/decorations/layout/PageDecosIdxmDefault//img/images/default/button/btn-sprite.gif) no-repeat 0 -21px;
+	background:#191970;
+	border-top: 1px solid #191970;
+	border-right: 1px solid #191970;	
+}
+
+/*Without Menu*/
+/* WORKING ON THIS PART */	
+.mpi-toolbar .mpi-btn-over-on  .x-btn-mc{
+	background:#191970;
+}
+
+.mpi-toolbar .mpi-btn-over-on  .x-btn-ml {
+	//background:url(/bluenog/decorations/layout/PageDecosIdxmDefault//img/images/default/button/btn-sprite.gif) no-repeat 0 0;
+	background:#191970;
+	border-top: 1px solid #191970;
+	border-left: 1px solid #191970;			
+}
+
+.mpi-toolbar .mpi-btn-over-on  .x-btn-mr {
+	//background:url(/bluenog/decorations/layout/PageDecosIdxmDefault//img/images/default/button/btn-sprite.gif) no-repeat 0 -21px;
+	background:#191970;
+	border-top: 1px solid #191970;
+	border-right: 1px solid #191970;
+}
+/* WORKING ON THIS PART */
+
+
+/* MPI Button Click ON */
+.mpi-btn-over-on .x-btn-focus .x-btn-mc, .mpi-btn-over-on .x-btn-click .x-btn-mc, mpi-btn-over-on .x-btn-pressed .x-btn-mc, .mpi-btn-over-on .x-btn-menu-active .x-btn-mc{
+	background:#191970;
+}
+
+.mpi-btn-over-on .x-btn-click .x-btn-ml, mpi-btn-over-on .x-btn-pressed .x-btn-ml, .mpi-btn-over-on .x-btn-menu-active .x-btn-ml{
+	//background: url(/bluenog/decorations/layout/PageDecosIdxmDefault/img/images/default/button/btn-sprite.gif) no-repeat 0 0;
+	background:#191970;
+	border-top: 1px solid #191970;
+	border-left: 1px solid #191970;		
+}
+
+.mpi-btn-over-on .x-btn-click .x-btn-mr, mpi-btn-over-on .x-btn-pressed .x-btn-mr, .mpi-btn-over-on .x-btn-menu-active .x-btn-mr{
+	//background:url(/bluenog/decorations/layout/PageDecosIdxmDefault/img/images/default/button/btn-sprite.gif)  no-repeat 0 -21px;
+	background:#191970;
+	border-top: 1px solid #191970;
+	border-right: 1px solid #191970;	
+}

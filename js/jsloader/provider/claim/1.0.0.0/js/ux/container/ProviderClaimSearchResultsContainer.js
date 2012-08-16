@@ -39,11 +39,6 @@ provider.claim.search.container.ProviderClaimSearchResultsContainer = Ext
 														baseObjConfig : config.baseObjConfig
 													},
 													{
-														xtype : "provider.claim.search.view.AdditionalInformationView",
-														id : "AdditionalInformationView",
-														baseObjConfig : config.baseObjConfig
-													},
-													{
 														xtype : "provider.claim.search.view.CreateCaseView",
 														id : "CreateCaseView"
 													},

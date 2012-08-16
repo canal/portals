@@ -1,0 +1,15 @@
+JSLoader.setEnv("IDXM_CREATEPROVIDER_PATH",JSLoader.makePath("idxm","createprovider","1.0.0.0"));
+JSLoader.loadJavaScript(JSLoader.getEnv("IDXM_CREATEPROVIDER_PATH")+"js/ux/component/CreateProviderWizard.js");
+JSLoader.loadJavaScript(JSLoader.getEnv("IDXM_CREATEPROVIDER_PATH")+"js/ux/panel/ProviderUserDetailsStep.js");
+JSLoader.loadJavaScript(JSLoader.getEnv("IDXM_CREATEPROVIDER_PATH")+"js/ux/panel/ProviderSearchStep.js");
+JSLoader.loadJavaScript(JSLoader.getEnv("IDXM_CREATEPROVIDER_PATH")+"js/ux/panel/ProviderSearchResultsStep.js");
+JSLoader.loadJavaScript(JSLoader.getEnv("IDXM_CREATEPROVIDER_PATH")+"js/ux/panel/ProviderUserSummaryDetailsStep.js");
+JSLoader.loadJavaScript(JSLoader.getEnv("IDXM_CREATEPROVIDER_PATH")+"js/ux/form/ProviderUserDetailsForm.js");
+JSLoader.loadJavaScript(JSLoader.getEnv("IDXM_CREATEPROVIDER_PATH")+"js/ux/panel/ProviderAccessTypePanel.js");
+JSLoader.loadJavaScript(JSLoader.getEnv("IDXM_CREATEPROVIDER_PATH")+"js/ux/form/ProviderSearchGroupForm.js");
+JSLoader.loadJavaScript(JSLoader.getEnv("IDXM_CREATEPROVIDER_PATH")+"js/ux/form/ProviderSearchPracForm.js");
+JSLoader.loadJavaScript(JSLoader.getEnv("IDXM_CREATEPROVIDER_PATH")+"js/ux/window/ProviderUserAlreadyExistWindow.js");
+JSLoader.loadJavaScript(JSLoader.getEnv("IDXM_CREATEPROVIDER_PATH")+"js/ux/panel/ProviderUserSummaryDetailsView.js");
+JSLoader.loadJavaScript(JSLoader.getEnv("IDXM_CREATEPROVIDER_PATH")+"js/ux/results/ProviderSearchResultsGrid.js");
+JSLoader.loadJavaScript(JSLoader.getEnv("IDXM_CREATEPROVIDER_PATH")+"js/ux/window/SearchResultsHardError.js");
+JSLoader.loadJavaScript(JSLoader.getEnv("IDXM_CREATEPROVIDER_PATH")+"js/ux/window/SearchResultsSoftError.js");

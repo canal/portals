@@ -19,11 +19,11 @@ provider.claim.search.view.CreateCaseView = Ext.extend(Ext.Panel, {
 //		var confirmEMail = config.confirmEMail;
 		
 		//if(config && config.confirmEMail && config.confirmEMail.length > 0) {
-			emailsText+= "<span class='portal-text-tiny'>Details have been emailed to you at:</span>"
+			emailsText+= "<span style='font-size:12px; height:15px; font-weight:normal;'>Details have been emailed to you at:</span>"
 			for(var i = 0; i < confirmEMail.length; i++) {
 				var email = confirmEMail[i];
 				if(email != null && email != undefined) {
-					emailsText+= "<span class='portal-text-tiny-bold'>&nbsp;";
+					emailsText+= "<span style='font-size:12px; height:15px; font-weight:bold;'>&nbsp;";
 					emailsText+= email;
 					emailsText+= "</span>";
 				}				
@@ -36,7 +36,7 @@ provider.claim.search.view.CreateCaseView = Ext.extend(Ext.Panel, {
 		statusMessage+= "<td width='10'></td><td><div class='uradix-statussuccess-msg'>Service Case Created</div></td>";
 		statusMessage += "</tr></tbody></table></div></div>";
 		
-		var caseLink = "<tr><td valign='top' height=125><p>Service Case Number: <a class='portal-link-medium' href='#' id="+serviceCaseLinkId+">"+caseData.caseNumber+"</a></p><p>"+emailsText+"</p></td></tr>";
+		var caseLink = "<tr><td valign='top' height=125><span style='font-size:18px; text-align:left; font-weight:normal;'><p>Service Case Number: <a class='portal-link-medium' href='#' id="+serviceCaseLinkId+">"+caseData.caseNumber+"</a></p></span><p><br/>"+emailsText+"</p></td></tr>";
 		
 		var findClaimHelpLinkId = Ext.id();
 

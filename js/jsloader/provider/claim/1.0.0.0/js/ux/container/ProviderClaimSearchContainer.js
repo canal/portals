@@ -81,10 +81,14 @@ provider.claim.search.container.ProviderClaimSearchContainer = Ext.extend(Object
     		container.getLayout().setActiveItem(cardId);	
     	} else if(cardId == 'OneClaimSearchResultView') {
     		viewToShow = new provider.claim.search.view.OneClaimSearchResultView({
-    			claim: this.claimSearchResults    			
+    			claim: this.claimSearchResults 
+    			,contactDetails: this.contactDetails
     		});    		
     		container.add(viewToShow );
     		container.getLayout().setActiveItem(cardId);	
+    		toggleClaimsGrid(lineItemsGridId, lineItemsGridIconId);
+    		toggleClaimsGrid(claimPricedGridId, claimPricedGridIconId);
+    		toggleClaimsGrid(fullAllowableGridId, fullAllowableGridIconId);
     	} else {
     		container.getLayout().setActiveItem(cardId);
     	} 	

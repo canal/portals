@@ -34,6 +34,11 @@ Ext.apply(Ext.form.VTypes, {
 	},
 	namePartText: 'Incorrect Name Format.  Name can only contain letters, apostrophes and hyphens and must be at least 1 character long.',
 	namePartMask: /^[a-z \.\'-]+$/i,
+	
+	orgNamePart: function(v) {			
+		return /[a-z]/gi.test(v);
+	},
+	orgNamePartText: 'Not a Valid Provider Organization Name.  Provider must contain at least 1 letter.',	
 		
 	  phone: function(v)
 	  {

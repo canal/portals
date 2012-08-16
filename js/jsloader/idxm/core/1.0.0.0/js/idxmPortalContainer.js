@@ -32,6 +32,20 @@ Wizard.PortalContainer = function()
 				Ext.History.init();
 				Ext.History.add(Wizard.PortalContainer.INIT_TOKEN);
 
+				//Controls History based on Wizard Portal Container
+				Ext.History.on('change', function(token)
+				{
+					if(token != Wizard.PortalContainer.INIT_TOKEN){	    	
+						try{
+							Wizard.PortalContainer.load(token);
+						}catch(e){alert(e);}
+				  	}else{
+				  		try{
+							Wizard.PortalContainer.load(Wizard.PortalContainer.getInitActionName());
+						}catch(e){alert(e);}
+					}
+				});
+				
 				panelCt = new Ext.Panel({
 				  	id: config.id,
 				  	renderTo: config.renderTo,
@@ -94,17 +108,4 @@ Wizard.PortalContainer = function()
 
 Ext.onReady(Wizard.PortalContainer.init);
 
-//Controls History based on Wizard Portal Container
-Ext.History.on('change', function(token)
-{
-	if(token != Wizard.PortalContainer.INIT_TOKEN){	    	
-		try{
-			Wizard.PortalContainer.load(token);
-		}catch(e){alert(e);}
-  	}else{
-  		try{
-			Wizard.PortalContainer.load(Wizard.PortalContainer.getInitActionName());
-		}catch(e){alert(e);}
-	}
-});
 

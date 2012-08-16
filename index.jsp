@@ -1,4 +1,4 @@
 <%@ include file="header.jsp" %>
-This is the body content
-
+<BR>This is the body content
+<BR>//Need to add login
 <%@ include file="footer.jsp" %>
