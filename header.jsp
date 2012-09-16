@@ -3,15 +3,19 @@
 		<script src="js/jsloader/jsloader.js"></script>
 		<script>
 			var _ext_adapter = "jquery";
-			JSLoader.load("extjs", "ext", "3.0.3");
+			
+			JSLoader.load("extjs", "ext", "3.0.3-g");
 			JSLoader.load("jquery", "main", "1.7.2");
-			JSLoader.load("uradix", "all", "1.0");
-			JSLoader.load("extjs", "extux", "Menu");
+			JSLoader.load("uradix", "extensions", "1.0-g");
+			JSLoader.load("uradix", "utilities", "1.0-g");
+			JSLoader.load("uradix", "validation", "1.0-g");
+			JSLoader.load("menu", "extjs", "1.0");
+			//JSLoader.load("uradix", "fileupload", "1.0-g");
+			//JSLoader.load("extjs", "extux", "Menu");
 		</script>
 		<script>
 			<%@ include file="menu.jsp" %>
-			
-			var g_portalURL = "home.jsp";
+			var g_portalURL = "http://localhost:8080/portals/index.jsp";
 		</script>
 	</head>
 
@@ -73,7 +77,5 @@
 
 		</table>										
 	</div>
-	<div id="centerRegionDiv">
-			
-			//Need to add menu			
+	<div id="centerRegionDiv">	
 		

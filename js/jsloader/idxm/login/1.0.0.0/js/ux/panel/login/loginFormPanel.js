@@ -64,7 +64,8 @@ idxm.login.ux.panel.login.LoginFormPanel = Ext.extend(uRadix.form.FormPanel,
 				,hideBorders:true
 				,labelAlign:"top"
 				,baseCls:"portal-login-form"
-				,listeners: {uradix_enterkey: this.formSubmit}
+				,listeners: {uradix_enterkey: this.formSubmit, formdirty : function(f,dirty){/*console.log('here',dirty);*/}}
+				,monitorDirty:true
 				,items:[{
 						xtype:"textfield"
 						,id:"USERNAME"
@@ -88,7 +89,24 @@ idxm.login.ux.panel.login.LoginFormPanel = Ext.extend(uRadix.form.FormPanel,
 						,id:"logInButton"+this.NAMESPACE					
 						,ctCls :"support-portal-btn"											
 						,handler:this.formSubmit
+						,listeners:{
+							formdirty:function(f,dirty){
+								if(dirty){
+									this.enable();
+								}else{
+									this.disable();
+								}
+							}
+						}
 					}]
+				,listeners:{
+					afterrender:function(){
+						var focusButton = Ext.getCmp("USERNAME");
+						if(focusButton){
+							focusButton.focus(true,200);
+						}
+					}
+				}
 		};
 		
 		Ext.apply(this, defaults);
@@ -194,22 +212,22 @@ idxm.login.ux.panel.login.LoginFormPanel = Ext.extend(uRadix.form.FormPanel,
 								uRadixRedirectHandler.redirect(thisObj.PASSWORD_EXPIRE_URL+"?passwordExpirationDays="+jsonResponse.passwordExpirationDays+"&fromLogin=1");
 							}else if(jsonResponse.passwordExpirationDays && (jsonResponse.passwordStatus == "CANCHANGE" || jsonResponse.passwordStatus == "CANNOTCHANGE")){										
 								if(thisObj.REDIRECT_URL && thisObj.REDIRECT_URL != "null"){											
-									uRadixRedirectHandler.redirect(thisObj.REDIRECT_URL);
+									//uRadixRedirectHandler.redirect(thisObj.REDIRECT_URL);
 								}else{
-									uRadixRedirectHandler.redirect(thisObj.PROFILE_URL);
+									//uRadixRedirectHandler.redirect(thisObj.PROFILE_URL);
 								}																	
 							}else{
 								if(thisObj.REDIRECT_URL && thisObj.REDIRECT_URL != "null"){
-									uRadixRedirectHandler.redirect(thisObj.REDIRECT_URL);
+									//uRadixRedirectHandler.redirect(thisObj.REDIRECT_URL);
 								}else{
-									uRadixRedirectHandler.redirect(thisObj.PROFILE_URL);
+									//uRadixRedirectHandler.redirect(thisObj.PROFILE_URL);
 								}	
 							}
 						}else{
 							if(thisObj.REDIRECT_URL && thisObj.REDIRECT_URL != "null"){
-								uRadixRedirectHandler.redirect(thisObj.REDIRECT_URL);
+								//uRadixRedirectHandler.redirect(thisObj.REDIRECT_URL);
 							}else{
-								uRadixRedirectHandler.redirect(thisObj.PROFILE_URL);
+								//uRadixRedirectHandler.redirect(thisObj.PROFILE_URL);
 							}
 						}																
 					}		

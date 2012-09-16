@@ -1,0 +1,88 @@
+/* line 4, ../compass/Styles.scss */
+.content-navigation {
+  border-color: #3bbfce;
+  color: #2ca2af; }
+
+/* line 10, ../compass/Styles.scss */
+.border {
+  padding: 8px;
+  margin: 8px;
+  border-color: #3bbfce; }
+
+/* line 16, ../compass/Styles.scss */
+table.hl {
+  margin: 2em 0; }
+  /* line 18, ../compass/Styles.scss */
+  table.hl td.ln {
+    text-align: right; }
+
+/* line 23, ../compass/Styles.scss */
+li {
+  font-family: serif;
+  font-weight: bold;
+  font-size: 1.2em; }
+
+/* line 44, ../compass/Styles.scss */
+#data {
+  float: left;
+  margin-left: 10px; }
+  /* line 32, ../compass/Styles.scss */
+  #data th {
+    text-align: center;
+    font-weight: bold; }
+  /* line 36, ../compass/Styles.scss */
+  #data td, #data th {
+    padding: 2px; }
+
+/* line 49, ../compass/Styles.scss */
+.error, .badError {
+  border: 1px #f00;
+  background: #fdd; }
+
+/* line 53, ../compass/Styles.scss */
+.error.intrusion, .intrusion.badError {
+  font-size: 1.3em;
+  font-weight: bold; }
+
+/* line 58, ../compass/Styles.scss */
+.badError {
+  border-width: 3px; }
+
+/* line 66, ../compass/Styles.scss */
+.example {
+  display: -moz-box;
+  display: -webkit-box;
+  display: -ms-box;
+  display: box;
+  -moz-box-orient: horizontal;
+  -webkit-box-orient: horizontal;
+  -ms-box-orient: horizontal;
+  box-orient: horizontal;
+  -moz-box-align: stretch;
+  -webkit-box-align: stretch;
+  -ms-box-align: stretch;
+  box-align: stretch;
+  -moz-box-direction: reverse;
+  -webkit-box-direction: reverse;
+  -ms-box-direction: reverse;
+  box-direction: reverse;
+  height: 200px;
+  width: 100%; }
+  /* line 73, ../compass/Styles.scss */
+  .example .content, .example .sidebar {
+    padding: 20px; }
+  /* line 75, ../compass/Styles.scss */
+  .example .content {
+    -moz-box-flex: 4;
+    -webkit-box-flex: 4;
+    -ms-box-flex: 4;
+    box-flex: 4;
+    background-color: #c5c1b4; }
+  /* line 78, ../compass/Styles.scss */
+  .example .sidebar {
+    -moz-box-flex: 1;
+    -webkit-box-flex: 1;
+    -ms-box-flex: 1;
+    box-flex: 1;
+    background-color: #375f99;
+    margin-right: 1px; }

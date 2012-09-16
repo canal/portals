@@ -41835,7 +41835,8 @@ Ext.Button = Ext.extend(Ext.BoxComponent, {
              * @param {Menu} menu
              * @param {EventObject} e
              */
-            'menutriggerout'
+            'menutriggerout',
+			'formdirty'
         );
         if(this.menu){
             this.menu = Ext.menu.MenuMgr.get(this.menu);
@@ -58362,6 +58363,8 @@ Ext.FormPanel = Ext.extend(Ext.Panel, {
      * @cfg {Number} monitorPoll The milliseconds to poll valid state, ignored if monitorValid is not true (defaults to 200)
      */
     monitorPoll : 200,
+	
+	monitorDirty: false,
 
     /**
      * @cfg {String} layout Defaults to <tt>'form'</tt>.  Normally this configuration property should not be altered. 
@@ -58394,6 +58397,8 @@ Ext.FormPanel = Ext.extend(Ext.Panel, {
              */
             'clientvalidation'
         );
+		
+		this.addEvents('formdirty');
 
         this.relayEvents(this.form, ['beforeaction', 'actionfailed', 'actioncomplete']);
     },
@@ -58455,6 +58460,7 @@ Ext.FormPanel = Ext.extend(Ext.Panel, {
     // private
     beforeDestroy : function(){
         this.stopMonitoring();
+		this.stopDirtyMonitoring();
         Ext.FormPanel.superclass.beforeDestroy.call(this);
         /*
          * Clear the items here to prevent them being destroyed again.
@@ -58482,6 +58488,9 @@ Ext.FormPanel = Ext.extend(Ext.Panel, {
         if(this.monitorValid){ // initialize after render
             this.startMonitoring();
         }
+		if(this.monitorDirty){
+			this.startDirtyMonitoring();
+		}
     },
     
     // private
@@ -58548,6 +58557,21 @@ Ext.FormPanel = Ext.extend(Ext.Panel, {
     },
 
     /**
+     * Starts monitoring of the dirty state of this form. Usually this is done by passing the config
+     * option "monitorDirty"
+     */	
+	startDirtyMonitoring : function(){
+		if(!this.dirtyTask){
+			this.dirtyTask = new Ext.util.TaskRunner();
+            this.dirtyTask.start({
+                run : this.bindDirtyHandler,
+                interval : this.monitorPoll || 200,
+                scope: this
+            });			
+		}
+	},
+
+    /**
      * Stops monitoring of the valid state of this form
      */
     stopMonitoring : function(){
@@ -58556,6 +58580,26 @@ Ext.FormPanel = Ext.extend(Ext.Panel, {
             this.validTask = null;
         }
     },
+	
+    stopDirtyMonitoring : function(){
+        if(this.dirtyTask){
+            this.dirtyTask.stopAll();
+            this.dirtyTask = null;
+        }
+    },	
+
+    // private
+    bindDirtyHandler : function(){       
+        var isFormDirty = this.form.isDirty();  
+		var formButtonsArray = this.buttons;
+		this.fireEvent('formdirty', this, isFormDirty);	
+		if(Ext.isArray(formButtonsArray)){
+			Ext.each(formButtonsArray,function(_button,_index){
+				_button.fireEvent('formdirty', this, isFormDirty);
+			});
+		}
+		
+    },	
 
     /**
      * This is a proxy for the underlying BasicForm's {@link Ext.form.BasicForm#load} call.

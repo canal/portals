@@ -57835,6 +57835,14 @@ new Ext.FormPanel({
         });
         return dirty;
     },
+	
+	bindFields : function(){
+        this.items.each(function(f){
+           if(f.isFormField){
+               f.on('test',callFunction
+           }
+        });	
+	},
 
     /**
      * Performs a predefined action ({@link Ext.form.Action.Submit} or
@@ -58407,7 +58415,7 @@ Ext.FormPanel = Ext.extend(Ext.Panel, {
     // private
     initFields : function(){
         var f = this.form;
-        var formPanel = this;
+        var formPanel = this;		
         var fn = function(c){
             if(formPanel.isField(c)){
                 f.add(c);
@@ -58447,6 +58455,7 @@ Ext.FormPanel = Ext.extend(Ext.Panel, {
 
     // private
     onRender : function(ct, position){
+		
         this.initFields();
         Ext.FormPanel.superclass.onRender.call(this, ct, position);
         this.form.initEl(this.body);
